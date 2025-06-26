@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "pratise android"
 include(":app")
+include(":app")
  
