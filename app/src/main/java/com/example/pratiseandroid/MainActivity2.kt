@@ -1,5 +1,5 @@
 package com.example.pratiseandroid
-import android.content.Intent
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -9,21 +9,22 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Toast
 import android.widget.CheckBox
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     lateinit var etUsername : EditText
     lateinit var etEmail : EditText
     lateinit var etPassword:EditText
     lateinit var btnCheck : Button
     lateinit var cbTerms: CheckBox
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+           v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+           insets
         }
         etUsername = findViewById(R.id.etUsername)
         etEmail = findViewById(R.id.etEmail)
@@ -44,17 +45,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please accept Terms and Privacy Policy", Toast.LENGTH_SHORT)
                     .show()
             }else{
+                println("Username: ${etUsername.text}")
+                println(" Email: ${etEmail.text}")
+                println(" Password: ${etPassword.text}")
 
-                val intent= Intent(this, MainActivity2::class.java)
-                startActivity(intent)
-
-                    this.finish()
-               // println("Username: ${etUsername.text}")
-              //  println(" Email: ${etEmail.text}")
-              //  println(" Password: ${etPassword.text}")
-
-             //   Toast.makeText(this, "Sign up successfully", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this, "login successfully", Toast.LENGTH_SHORT).show()
+             this.finish()
 
 
             }}
