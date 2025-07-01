@@ -48,8 +48,9 @@ class AlertMessagesActivity : AppCompatActivity() {
                     binding.tvInteger.text = counter.toString()
 
                 }
-                .setNeutralButton("No"){_,_->
-
+                .setNeutralButton("zero"){_,_->
+                    counter = 0
+                    binding.tvInteger.text = counter.toString()
                 }
 
                 .show()
