@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                     .show()
             }else{
 
-                val intent= Intent(this, MainActivity2::class.java)
+               val intent= Intent(this, MainActivity2::class.java)
                 startActivity(intent)
 
                     this.finish()

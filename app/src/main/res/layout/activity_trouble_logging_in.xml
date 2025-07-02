@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Trouble Logging In?"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvParagraph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvText1"
+        android:layout_marginTop="23dp"
+        android:lineSpacingExtra="4dp"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="10dp"
+        android:text="Enter your email, phone or username and we'llsend you a link to get back into your account"
+        android:textSize="16sp" />
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/tvParagraph"
+        android:hint="Email Phone or username"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etUsername"
+        android:layout_margin="10sp"
+        android:text="Send Login Link"
+        />
+    <TextView
+        android:id="@+id/tvReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Can't reset your password? "
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnCheck"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/blue"/>
+    <TextView
+        android:id="@+id/tvOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvReset"
+        android:layout_marginTop="10dp"
+        android:text="Or"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+    <TextView
+        android:id="@+id/tvCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create your account "
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tvOr"
+
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"/>
+</RelativeLayout>

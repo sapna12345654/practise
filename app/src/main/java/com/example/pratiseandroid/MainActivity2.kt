@@ -1,5 +1,6 @@
 package com.example.pratiseandroid
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -45,12 +46,16 @@ class MainActivity2 : AppCompatActivity() {
                 Toast.makeText(this, "Please accept Terms and Privacy Policy", Toast.LENGTH_SHORT)
                     .show()
             }else{
-                println("Username: ${etUsername.text}")
-                println(" Email: ${etEmail.text}")
-                println(" Password: ${etPassword.text}")
+                val intent= Intent(this, TroubleLoggingIn::class.java)
+               startActivity(intent)
 
-                Toast.makeText(this, "login successfully", Toast.LENGTH_SHORT).show()
-             this.finish()
+
+              //  println("Username: ${etUsername.text}")
+              //  println(" Email: ${etEmail.text}")
+              //  println(" Password: ${etPassword.text}")
+
+             //   Toast.makeText(this, "login successfully", Toast.LENGTH_SHORT).show()
+          //   this.finish()
 
 
             }}
