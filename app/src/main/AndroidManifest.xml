@@ -13,8 +13,7 @@
         android:theme="@style/Theme.PratiseAndroid">
         <activity
             android:name=".FragmentActivity"
-            android:exported="true"
-            tools:ignore="DuplicateActivity,MissingClass">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
