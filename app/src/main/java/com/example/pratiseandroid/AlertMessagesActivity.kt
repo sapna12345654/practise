@@ -1,5 +1,10 @@
 package com.example.pratiseandroid
+import android.annotation.SuppressLint
+import android.app.ActionBar
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -14,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar
 class AlertMessagesActivity : AppCompatActivity() {
     lateinit var binding : ActivityAlertMessagesBinding
     private var counter = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -56,5 +62,28 @@ class AlertMessagesActivity : AppCompatActivity() {
                 .show()
 
         }
+binding.btnDialog.setOnClickListener{
+    var dialog = Dialog(this)
+    dialog.setContentView(R.layout.dialog_design)
+    dialog.window?.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT)//
+    var name = dialog.findViewById<EditText>(R.id.etName)
+    var save = dialog.findViewById<Button>(R.id.btnSave)
+    val currentText = binding.tvUserName.text.toString()
+    name.setText(currentText)
+    save.setOnClickListener {
+        if(name.text.isEmpty()){
+            name.error = "Enter Your Name"
+        }else{
+binding.tvUserName.text= name.text.toString()
+            dialog.dismiss()
+
+        }
+    }
+    dialog.show()
+}
     }
 }
+
+
+
+

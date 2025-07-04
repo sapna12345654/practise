@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -12,29 +12,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PratiseAndroid">
         <activity
+            android:name=".FragmentActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity,MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".VerifyOtpActivity"
             android:exported="true"
             tools:ignore="MissingClass">
-         <!--   <intent-filter>
+
+            <!--
+            <intent-filter>
               <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".TroubleLoggingIn"
             android:exported="true">
-         <!--   <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
-
         <activity
             android:name=".AlertMessagesActivity"
             android:exported="true">
-           <!-- <intent-filter>
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -43,29 +58,35 @@
         <activity
             android:name=".ImplicitActivity"
             android:exported="true">
-        <!--    <intent-filter>
+
+            <!--
+                <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".MainActivity2"
-            android:exported="true" >
-          <intent-filter>
-               <action android:name="android.intent.action.MAIN" />
-
-               <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
           <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
         </activity>
     </application>
 
