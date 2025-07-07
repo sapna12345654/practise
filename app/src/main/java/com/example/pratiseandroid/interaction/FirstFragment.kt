@@ -1,4 +1,5 @@
-package com.example.pratiseandroid
+package com.example.pratiseandroid.interaction
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,10 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.pratiseandroid.R
 import com.example.pratiseandroid.databinding.FragmentFirstBinding
-import com.example.pratiseandroid.interaction.ClickInterface
 
 /**
- * A simple [Fragment] subclass.
+ * A simple [androidx.fragment.app.Fragment] subclass.
  * Use the [FirstFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
