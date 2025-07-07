@@ -30,9 +30,16 @@ class FragmentActivity : AppCompatActivity() {
         }
         binding.btnGreen.setOnClickListener {
 
-            clickInterface.changeColor(1)
+            clickInterface.changeColor(2)
         }
+        binding.btnBlue.setOnClickListener {
 
+            clickInterface.changeColor(3)
+        }
+        binding.btnPurple.setOnClickListener {
+
+            clickInterface.changeColor(4)
+        }
     }
 
 

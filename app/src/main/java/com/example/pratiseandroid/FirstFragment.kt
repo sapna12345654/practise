@@ -1,4 +1,3 @@
-
 package com.example.pratiseandroid
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -84,9 +83,13 @@ class FirstFragment : Fragment(), ClickInterface {
     }
 
     override fun changeColor(num: Int) {
-        println("Call or not: $num")
-        binding.mainLayout.setBackgroundColor(resources.getColor(R.color.red))
-        binding.mainLayout.setBackgroundColor(resources.getColor(R.color.green))
+        val colorRes = when (num) {
+            1 -> R.color.red
+            2 -> R.color.green
+            3 -> R.color.blue
+            4 -> R.color.purple
+            else -> android.R.color.white
+        }
+        binding.mainLayout.setBackgroundColor(resources.getColor(colorRes, null))
     }
-
 }
