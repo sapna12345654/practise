@@ -12,13 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PratiseAndroid">
         <activity
-            android:name=".interaction.FragmentActivity"
+            android:name=".fragments.FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".interaction.FragmentActivity"
+            android:exported="true">
+          <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".VerifyOtpActivity"
@@ -48,11 +57,14 @@
         <activity
             android:name=".AlertMessagesActivity"
             android:exported="true">
-          <!--  <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".ImplicitActivity"
@@ -69,11 +81,14 @@
         <activity
             android:name=".MainActivity2"
             android:exported="true">
-          <!--  <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".MainActivity"
