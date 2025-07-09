@@ -27,6 +27,9 @@ class BaseFragment : Fragment() {
         listAdapter = ListBaseAdapter(studentList) { position ->
             showStudentDialog(isEdit = true, editPosition = position)
         }
+        binding.lvList.setOnItemClickListener { _, _, position, _ ->
+            showStudentDialog(isEdit = true, editPosition = position)
+        }
         binding.lvList.adapter = listAdapter
 
         // Add new student
@@ -48,7 +51,10 @@ class BaseFragment : Fragment() {
     private fun showStudentDialog(isEdit: Boolean, editPosition: Int = -1) {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_student)
-
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         val etName = dialog.findViewById<EditText>(R.id.etDialogName)
         val etRoll = dialog.findViewById<EditText>(R.id.etDialogRoll)
         val etPhone = dialog.findViewById<EditText>(R.id.etDialogPhone)
