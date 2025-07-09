@@ -13,4 +13,7 @@
     <string name="green">Green</string>
     <string name="blue">Blue</string>
     <string name="purple">purple</string>
+    <string name="name">Name</string>
+    <string name="_123">123</string>
+    <string name="_1234567890">1234567890</string>
 </resources>
