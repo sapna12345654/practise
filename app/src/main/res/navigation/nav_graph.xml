@@ -24,7 +24,12 @@
                 android:id="@+id/baseFragment"
                 android:name="com.example.pratiseandroid.fragments.BaseFragment"
                 android:label="fragment_base"
-                tools:layout="@layout/fragment_base" >
+                tools:layout="@layout/fragment_base" />
+                <fragment
+                    android:id="@+id/recyclerFragment"
+                    android:name="com.example.pratiseandroid.fragments.RecyclerFragment"
+                    android:label="fragment_recycler"
+                    tools:layout="@layout/fragment_recycler" >
 
     </fragment>
 </navigation>
