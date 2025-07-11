@@ -25,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RecyclerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RecyclerFragment : Fragment(), ClickInterface {
+class RecyclerFragment : Fragment(),  ClickInterface {
     lateinit var binding : FragmentRecyclerBinding
     lateinit var recyclerAdapter: RecyclerAdapter
     // TODO: Rename and change types of parameters
@@ -47,8 +47,8 @@ class RecyclerFragment : Fragment(), ClickInterface {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentRecyclerBinding.inflate(layoutInflater)
-        recyclerAdapter = RecyclerAdapter(studentList,this)
+       binding = FragmentRecyclerBinding.inflate(layoutInflater)
+       recyclerAdapter = RecyclerAdapter(studentList,this)
         binding.rvList.layoutManager = LinearLayoutManager(requireContext())
         binding.rvList.adapter = recyclerAdapter
 
