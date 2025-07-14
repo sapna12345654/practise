@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/recyclerFragment">
+    app:startDestination="@id/spinnerFragment">
 
     <fragment
         android:id="@+id/firstFragment"
@@ -32,4 +32,9 @@
                     tools:layout="@layout/fragment_recycler" >
 
     </fragment>
+    <fragment
+        android:id="@+id/spinnerFragment"
+        android:name="com.example.pratiseandroid.fragments.SpinnerFragment"
+        android:label="fragment_spinner"
+        tools:layout="@layout/fragment_spinner" />
 </navigation>

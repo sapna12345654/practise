@@ -5,4 +5,8 @@ data class StudentModel(
     var rollNo: String? = null,
     var contactNo: String? = null
 
-)
+){
+    override fun toString(): String {
+        return name.toString()
+    }
+}
