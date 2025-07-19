@@ -11,5 +11,10 @@
         android:title="Settings"
         android:icon="@drawable/setting_ic"/>
 
+    <item
+        android:id="@+id/itemProfile"
+        android:title="Profile"
+        android:icon="@drawable/profile_ic"/>
+
 
 </menu>

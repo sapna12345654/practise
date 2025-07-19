@@ -28,7 +28,8 @@ class BottomNavigateActivity : AppCompatActivity() {
         binding.bottomNav.setOnItemSelectedListener{it->
             when(it.itemId){
                 R.id.itemHome->{ navController.navigate(R.id.bottomFragment)}
-                R.id.itemSetting->{ navController.navigate(R.id.settingFragment)
+                R.id.itemSetting->{ navController.navigate(R.id.settingFragment)}
+                R.id.itemProfile->{navController.navigate(R.id.profileFragment)
             }
         }
         return@setOnItemSelectedListener true
