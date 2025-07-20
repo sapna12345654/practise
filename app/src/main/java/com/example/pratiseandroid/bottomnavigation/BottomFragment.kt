@@ -1,11 +1,20 @@
 package com.example.pratiseandroid.bottomnavigation
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.launch
+import androidx.core.content.ContextCompat
 import com.example.pratiseandroid.R
+import com.example.pratiseandroid.databinding.FragmentBottomBinding
 
 
 /**
@@ -14,6 +23,32 @@ import com.example.pratiseandroid.R
  * create an instance of this fragment.
  */
 class BottomFragment : Fragment() {
+    lateinit var binding: FragmentBottomBinding
+    var imageUri: Uri?=null
+
+    var galleryPermission=registerForActivityResult(ActivityResultContracts.RequestPermission()){isGranted->
+     if(isGranted){
+         Toast.makeText(requireContext(),"Permission Granted",Toast.LENGTH_SHORT).show()
+     }else{
+         Toast.makeText(requireContext(),"Permission Not Granted",Toast.LENGTH_SHORT).show()
+     }}
+    var cameraPermission=registerForActivityResult(ActivityResultContracts.RequestPermission()){isGranted->
+        if(isGranted){
+            Toast.makeText(requireContext(),"Permission Granted",Toast.LENGTH_SHORT).show()
+        }else{
+            Toast.makeText(requireContext(),"Permission Not Granted",Toast.LENGTH_SHORT).show()
+        }}
+    var galleryPick=registerForActivityResult(ActivityResultContracts.GetContent()){uri->
+        uri?.let {
+            binding.ivImage.setImageURI(it)
+        }}
+    val takePicturePreview = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) { bitmap ->
+        bitmap?.let {
+            binding.ivImage.setImageBitmap(it)
+        } ?: run {
+            Toast.makeText(requireContext(), "Failed to capture image", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +62,27 @@ class BottomFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bottom, container, false)
+     binding= FragmentBottomBinding.inflate(layoutInflater)
+       // binding.ivImage.setImageURI(imageUri)
+        binding.btnImage.setOnClickListener{
+            if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED){
+                println("Check SelectedImage:$imageUri")
+
+                galleryPick.launch("image/*")
+            }else{
+                galleryPermission.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        }
+        binding.btnCamera.setOnClickListener{
+            if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)== PackageManager.PERMISSION_GRANTED){
+             takePicturePreview.launch()
+            }else{
+                cameraPermission.launch(Manifest.permission.CAMERA)
+            }
+        }
+    return binding.root
     }
+
 
     companion object {
         /**
@@ -49,3 +103,4 @@ class BottomFragment : Fragment() {
             }
     }
 }
+
